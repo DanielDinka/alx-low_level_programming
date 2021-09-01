@@ -1,27 +1,19 @@
-/*
- * File: 0-holberton.c
- * Auth: Brennan D Baraban
- *
- */
-
-#include "holberton.h"
+#include "main.h"
 
 /**
- * main - Prints "Holberton" followed by a new line.
+ * main - Entry point
  *
- * Return: Always 0.
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
-	_putchar('H');
-	_putchar('o');
-	_putchar('l');
-	_putchar('b');
-	_putchar('e');
-	_putchar('r');
-	_putchar('t');
-	_putchar('o');
-	_putchar('n');
+	char *word = "Holberton";
+
+	while (*word)
+	{
+		_putchar(*word);
+		word++;
+	}
 	_putchar('\n');
 
 	return (0);
