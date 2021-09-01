@@ -2,19 +2,18 @@
 
 /**
  * main - Entry point
- *
- * Return: Always 0 (Success)
+ * Return:0
  */
+
 int main(void)
 {
-	char *word = "Holberton";
-
-	while (*word)
-	{
-		_putchar(*word);
-		word++;
-	}
-	_putchar('\n');
-
-	return (0);
+char c[10] = "Holberton";
+int i = 0;
+while (i < 9)
+{
+_putchar(c[i]);
+i++;
+}
+_putchar('\n');
+return (0);
 }
