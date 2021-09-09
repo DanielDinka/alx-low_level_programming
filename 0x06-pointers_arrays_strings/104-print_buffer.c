@@ -1,9 +1,4 @@
-/*
- * File: 103-print_buffer.c
- * Auth: Daniel Tolera
- */
-
-#include "holberton.h"
+#include "main.h"
 #include <stdio.h>
 
 /**
