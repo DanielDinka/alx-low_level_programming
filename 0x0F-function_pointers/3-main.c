@@ -1,32 +1,38 @@
 #include "3-calc.h"
 /**
- * main - arguments for struct
- * @argc: numbers arguments
- * @argv: string arguments
- * Return: 0.
- */
+  *main - check arguments
+  *@argc: argument count
+  *@argv: argument vector.
+  *
+  *Return: error if number of arguments is wrong
+  */
 int main(int argc, char *argv[])
 {
-  int i, j;
-  int (*d)(int, int);
-  if (argc != 4)
-    {
-      printf("Error\n");
-      exit(98);
-    }
-  if (argv[2][1] != '\0')
-    {
-      printf("Error\n");
-      exit(99);
-    }
-  d = get_op_func(argv[2]);
-  if (d == NULL)
-    {
-      printf("Error\n");
-      exit(99);
-    }
-  i = atoi(argv[1]);
-  j = atoi(argv[3]);
-  printf("%d\n", d(i, j));
-  return (0);
+	int a = 0, b = 0, res = 0;
+	char s;
+
+	if (argc != 4)
+	{
+		printf("Error\n");
+		exit(98);
+	}
+	/* check if theres only one operator*/
+	if (argv[2][1] != '\0')
+	{
+		printf("Error\n");
+		exit(99);
+	}
+
+	s = argv[2][0];
+	if (s != '+' && s != '-' && s != '/' && s != '*' && s != '%')
+	{
+		printf("Error\n");
+		exit(99);
+	}
+
+	a = atoi(argv[1]);
+	b = atoi(argv[3]);
+	res = (get_op_func(argv[2]))(a, b);
+	printf("%d\n", res);
+	return (0);
 }
